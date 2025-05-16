@@ -1,289 +1,360 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Official Anas Silence Protocol</title>
+    <title>Mon Projet Personnel</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        @keyframes shake {
-            0%, 100% { transform: translateX(0); }
-            10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
-            20%, 40%, 60%, 80% { transform: translateX(5px); }
+        @keyframes jump {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
         }
-        .shake {
-            animation: shake 0.5s infinite;
+        @keyframes move {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(100px); }
         }
-        .template-bg {
-            background-image: url('data:image/svg+xml;utf8,<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="M30,10 L70,10 L90,50 L70,90 L30,90 L10,50 Z" fill="none" stroke="rgba(255,0,0,0.1)" stroke-width="1"/></svg>');
-            background-size: 100px 100px;
+        .jumping-frog {
+            animation: jump 2s infinite;
         }
-        .speech-bubble {
-            position: relative;
-            background: #ff4757;
-            border-radius: 1rem;
+        .moving-saw {
+            animation: move 2s linear infinite alternate;
         }
-        .speech-bubble:after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            width: 0;
-            height: 0;
-            border: 20px solid transparent;
-            border-top-color: #ff4757;
-            border-bottom: 0;
-            border-left: 0;
-            margin-left: -10px;
-            margin-bottom: -20px;
+        .code-block {
+            font-family: 'Courier New', monospace;
+            background-color: #2d3748;
+            color: #f7fafc;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            overflow-x: auto;
+        }
+        .lily-pad {
+            transition: all 0.3s ease;
+        }
+        .lily-pad:hover {
+            transform: scale(1.1);
+        }
+        .platform {
+            transition: all 0.5s ease;
+        }
+        .platform:hover {
+            transform: translateX(20px);
         }
     </style>
 </head>
-<body class="template-bg min-h-screen bg-gray-100 font-sans">
-    <div class="container mx-auto px-4 py-12">
-        <!-- Header -->
-        <header class="text-center mb-16">
-            <h1 class="text-6xl md:text-8xl font-bold text-red-600 mb-4 shake">
-                <i class="fas fa-volume-mute mr-4"></i>
-                ANAS
-                <i class="fas fa-volume-mute ml-4"></i>
-            </h1>
-            <h2 class="text-4xl md:text-5xl font-bold text-gray-800">
-                PLEASE SHUT YO ASS UP
-            </h2>
-            <div class="mt-8">
-                <div class="speech-bubble inline-block px-8 py-4 text-white text-2xl font-bold">
-                    "But why though?"
+<body class="bg-green-50 min-h-screen">
+    <!-- Header -->
+    <header class="bg-green-600 text-white py-8 px-4 shadow-lg">
+        <div class="container mx-auto text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-2">Mon Projet Personnel</h1>
+            <h2 class="text-2xl md:text-3xl font-semibold">Jump Frog : Fait par Mohamed Makhlouf</h2>
+            
+            <!-- Animated Frog SVG -->
+            <div class="flex justify-center mt-6">
+                <svg class="jumping-frog w-24 h-24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+                    <circle cx="50" cy="50" r="40" fill="#4CAF50" />
+                    <circle cx="35" cy="40" r="5" fill="#000" />
+                    <circle cx="65" cy="40" r="5" fill="#000" />
+                    <path d="M40 65 Q50 75 60 65" stroke="#000" stroke-width="2" fill="none" />
+                    <ellipse cx="30" cy="30" rx="3" ry="2" fill="#fff" />
+                    <ellipse cx="70" cy="30" rx="3" ry="2" fill="#fff" />
+                    <path d="M20 70 L30 80" stroke="#4CAF50" stroke-width="4" />
+                    <path d="M80 70 L70 80" stroke="#4CAF50" stroke-width="4" />
+                </svg>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-12">
+        <!-- About Section -->
+        <section class="mb-16 bg-white rounded-xl shadow-md p-6">
+            <h2 class="text-3xl font-bold text-green-700 mb-6">À propos du projet</h2>
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div>
+                    <p class="text-gray-700 mb-4">
+                        Jump Frog est un jeu de plateforme dynamique où vous contrôlez une grenouille qui doit naviguer à travers des obstacles pour atteindre le drapeau de fin de niveau.
+                    </p>
+                    <p class="text-gray-700 mb-4">
+                        Le jeu propose des mécaniques variées avec une difficulté progressive pour un challenge toujours plus intense.
+                    </p>
+                    <div class="flex space-x-4 mt-6">
+                        <div class="bg-green-100 p-4 rounded-lg">
+                            <i class="fas fa-gamepad text-green-600 text-2xl mb-2"></i>
+                            <h3 class="font-bold">Contrôles précis</h3>
+                        </div>
+                        <div class="bg-green-100 p-4 rounded-lg">
+                            <i class="fas fa-code text-green-600 text-2xl mb-2"></i>
+                            <h3 class="font-bold">Code optimisé</h3>
+                        </div>
+                        <div class="bg-green-100 p-4 rounded-lg">
+                            <i class="fas fa-chart-line text-green-600 text-2xl mb-2"></i>
+                            <h3 class="font-bold">Progression</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" class="w-64 h-64">
+                        <rect x="20" y="160" width="160" height="20" fill="#6B7280" rx="2" />
+                        <rect x="60" y="120" width="80" height="40" fill="#6B7280" rx="2" />
+                        <rect x="80" y="80" width="40" height="40" fill="#6B7280" rx="2" />
+                        <circle cx="50" cy="140" r="15" fill="#4CAF50" />
+                        <circle cx="150" cy="140" r="15" fill="#4CAF50" />
+                        <circle cx="100" cy="60" r="15" fill="#4CAF50" />
+                        <path d="M180 40 L160 60 L170 50 L160 40 Z" fill="#EF4444" />
+                    </svg>
                 </div>
             </div>
-        </header>
+        </section>
 
-        <!-- Main Content -->
-        <main>
-            <!-- Official Silence Protocol -->
-            <section class="bg-white rounded-xl shadow-2xl p-8 mb-12 border-4 border-red-500">
-                <div class="flex items-center mb-6">
-                    <div class="bg-red-500 text-white p-3 rounded-full mr-4">
-                        <i class="fas fa-file-alt text-2xl"></i>
+        <!-- How It Works Section -->
+        <section class="mb-16 bg-white rounded-xl shadow-md p-6">
+            <h2 class="text-3xl font-bold text-green-700 mb-6">Comment ça marche</h2>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-green-50 p-6 rounded-lg">
+                    <div class="text-center mb-4">
+                        <div class="inline-flex items-center justify-center w-16 h-16 bg-green-100 rounded-full">
+                            <i class="fas fa-keyboard text-green-600 text-2xl"></i>
+                        </div>
                     </div>
-                    <h3 class="text-3xl font-bold text-gray-800">OFFICIAL SILENCE PROTOCOL TEMPLATE</h3>
+                    <h3 class="text-xl font-semibold text-center mb-3">Contrôles</h3>
+                    <p class="text-gray-700">
+                        Utilisez les touches <span class="font-bold">A/D</span> ou <span class="font-bold">←/→</span> pour déplacer la grenouille et <span class="font-bold">Espace</span> pour sauter. Attention aux obstacles !
+                    </p>
                 </div>
-                
-                <div class="grid md:grid-cols-3 gap-8">
-                    <!-- Step 1 -->
-                    <div class="bg-gray-50 p-6 rounded-lg border-l-8 border-red-500">
-                        <div class="flex items-center mb-4">
-                            <span class="bg-red-500 text-white rounded-full w-8 h-8 flex items-center justify-center mr-3">1</span>
-                            <h4 class="font-bold text-xl">Initial Request</h4>
-                        </div>
-                        <p class="text-gray-700 mb-4">Politely ask Anas to lower their volume or cease speaking entirely.</p>
-                        <div class="bg-yellow-100 p-3 rounded border-l-4 border-yellow-500">
-                            <p class="font-mono">"Hey Anas, could you maybe... not?"</p>
+                <div class="bg-green-50 p-6 rounded-lg">
+                    <div class="text-center mb-4">
+                        <div class="inline-flex items-center justify-center w-16 h-16 bg-green-100 rounded-full">
+                            <i class="fas fa-flag text-green-600 text-2xl"></i>
                         </div>
                     </div>
-                    
-                    <!-- Step 2 -->
-                    <div class="bg-gray-50 p-6 rounded-lg border-l-8 border-red-500">
-                        <div class="flex items-center mb-4">
-                            <span class="bg-red-500 text-white rounded-full w-8 h-8 flex items-center justify-center mr-3">2</span>
-                            <h4 class="font-bold text-xl">Firm Reminder</h4>
-                        </div>
-                        <p class="text-gray-700 mb-4">When ignored, escalate with a more direct approach.</p>
-                        <div class="bg-orange-100 p-3 rounded border-l-4 border-orange-500">
-                            <p class="font-mono">"Anas, I swear to god, SHUT UP!"</p>
-                        </div>
-                    </div>
-                    
-                    <!-- Step 3 -->
-                    <div class="bg-gray-50 p-6 rounded-lg border-l-8 border-red-500">
-                        <div class="flex items-center mb-4">
-                            <span class="bg-red-500 text-white rounded-full w-8 h-8 flex items-center justify-center mr-3">3</span>
-                            <h4 class="font-bold text-xl">Final Solution</h4>
-                        </div>
-                        <p class="text-gray-700 mb-4">If all else fails, implement physical countermeasures.</p>
-                        <div class="bg-red-100 p-3 rounded border-l-4 border-red-500">
-                            <p class="font-mono">*Throws pillow* *Duct tape appears*</p>
-                        </div>
-                    </div>
+                    <h3 class="text-xl font-semibold text-center mb-3">Objectif</h3>
+                    <p class="text-gray-700">
+                        Atteignez le drapeau à la fin de chaque niveau. La difficulté augmente progressivement avec de nouveaux obstacles et plateformes mobiles.
+                    </p>
                 </div>
-            </section>
-
-            <!-- Additional Resources -->
-            <section class="mb-12">
-                <h3 class="text-2xl font-bold text-gray-800 mb-6 text-center">SUPPLEMENTAL SILENCING TECHNIQUES</h3>
-                
-                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                    <!-- Technique 1 -->
-                    <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow">
-                        <div class="text-red-500 mb-3 text-4xl">
-                            <i class="fas fa-headphones"></i>
+                <div class="bg-green-50 p-6 rounded-lg">
+                    <div class="text-center mb-4">
+                        <div class="inline-flex items-center justify-center w-16 h-16 bg-green-100 rounded-full">
+                            <i class="fas fa-banana text-yellow-500 text-2xl"></i>
                         </div>
-                        <h4 class="font-bold text-lg mb-2">Noise Cancellation</h4>
-                        <p class="text-gray-600">Invest in high-quality headphones to create a personal silence bubble.</p>
                     </div>
-                    
-                    <!-- Technique 2 -->
-                    <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow">
-                        <div class="text-red-500 mb-3 text-4xl">
-                            <i class="fas fa-gift"></i>
-                        </div>
-                        <h4 class="font-bold text-lg mb-2">Bribery</h4>
-                        <p class="text-gray-600">Offer snacks in exchange for 5 minutes of silence. Works 60% of the time, every time.</p>
-                    </div>
-                    
-                    <!-- Technique 3 -->
-                    <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow">
-                        <div class="text-red-500 mb-3 text-4xl">
-                            <i class="fas fa-running"></i>
-                        </div>
-                        <h4 class="font-bold text-lg mb-2">Strategic Retreat</h4>
-                        <p class="text-gray-600">When all else fails, remove yourself from the situation. Run if necessary.</p>
-                    </div>
-                    
-                    <!-- Technique 4 -->
-                    <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow">
-                        <div class="text-red-500 mb-3 text-4xl">
-                            <i class="fas fa-user-secret"></i>
-                        </div>
-                        <h4 class="font-bold text-lg mb-2">Psychological Warfare</h4>
-                        <p class="text-gray-600">Stare silently until uncomfortable. Works best with unblinking eye contact.</p>
-                    </div>
+                    <h3 class="text-xl font-semibold text-center mb-3">Score</h3>
+                    <p class="text-gray-700">
+                        Collectez des bananes pendant votre parcours pour augmenter votre score. Chaque banane rapporte des points bonus !
+                    </p>
                 </div>
-            </section>
-
-            <!-- Emergency Section -->
-            <section class="bg-red-600 text-white rounded-xl p-8 mb-12">
-                <div class="flex flex-col md:flex-row items-center">
-                    <div class="md:w-1/4 text-center md:text-left mb-6 md:mb-0">
-                        <i class="fas fa-exclamation-triangle text-6xl"></i>
-                    </div>
-                    <div class="md:w-3/4">
-                        <h3 class="text-3xl font-bold mb-4">EMERGENCY PROTOCOL</h3>
-                        <p class="text-xl mb-4">For when Anas won't stop talking about:</p>
-                        <ul class="grid grid-cols-2 gap-2 mb-6">
-                            <li><i class="fas fa-check-circle mr-2"></i> Crypto</li>
-                            <li><i class="fas fa-check-circle mr-2"></i> Their diet</li>
-                            <li><i class="fas fa-check-circle mr-2"></i> Gym routine</li>
-                            <li><i class="fas fa-check-circle mr-2"></i> Conspiracy theories</li>
-                        </ul>
-                        <button class="bg-white text-red-600 font-bold py-3 px-6 rounded-full hover:bg-gray-200 transition">
-                            <i class="fas fa-bell mr-2"></i> ACTIVATE EMERGENCY SHUTDOWN
-                        </button>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Testimonials -->
-            <section class="mb-12">
-                <h3 class="text-2xl font-bold text-gray-800 mb-6 text-center">SUCCESS STORIES</h3>
-                
-                <div class="grid md:grid-cols-3 gap-6">
-                    <!-- Testimonial 1 -->
-                    <div class="bg-white p-6 rounded-lg shadow-md">
-                        <div class="flex items-center mb-4">
-                            <div class="w-12 h-12 bg-red-500 rounded-full flex items-center justify-center text-white font-bold mr-4">JD</div>
-                            <div>
-                                <h4 class="font-bold">John D.</h4>
-                                <div class="flex text-yellow-400">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                </div>
-                            </div>
-                        </div>
-                        <p class="text-gray-600 italic">"Used the duct tape method. 10/10 would recommend. Silence lasted 3 glorious hours."</p>
-                    </div>
-                    
-                    <!-- Testimonial 2 -->
-                    <div class="bg-white p-6 rounded-lg shadow-md">
-                        <div class="flex items-center mb-4">
-                            <div class="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold mr-4">SM</div>
-                            <div>
-                                <h4 class="font-bold">Sarah M.</h4>
-                                <div class="flex text-yellow-400">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star-half-alt"></i>
-                                </div>
-                            </div>
-                        </div>
-                        <p class="text-gray-600 italic">"Bribery worked temporarily, but then Anas just talked with their mouth full. 3.5 stars."</p>
-                    </div>
-                    
-                    <!-- Testimonial 3 -->
-                    <div class="bg-white p-6 rounded-lg shadow-md">
-                        <div class="flex items-center mb-4">
-                            <div class="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center text-white font-bold mr-4">RT</div>
-                            <div>
-                                <h4 class="font-bold">Robert T.</h4>
-                                <div class="flex text-yellow-400">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                </div>
-                            </div>
-                        </div>
-                        <p class="text-gray-600 italic">"Psychological warfare was effective but creepy. Now Anas avoids me completely. Perfect!"</p>
-                    </div>
-                </div>
-            </section>
-        </main>
-
-        <!-- Footer -->
-        <footer class="text-center text-gray-600 border-t border-gray-200 pt-8">
-            <p class="mb-4">This is a satirical website. No Anas were harmed in the making of this template.</p>
-            <p>© 2023 International Anas Silence Foundation. All rights reserved.</p>
-            <div class="mt-4 flex justify-center space-x-4">
-                <a href="#" class="text-red-500 hover:text-red-700"><i class="fab fa-twitter text-xl"></i></a>
-                <a href="#" class="text-red-500 hover:text-red-700"><i class="fab fa-instagram text-xl"></i></a>
-                <a href="#" class="text-red-500 hover:text-red-700"><i class="fab fa-tiktok text-xl"></i></a>
             </div>
-        </footer>
-    </div>
+        </section>
 
-    <!-- Floating Anas Head -->
-    <div class="fixed bottom-4 right-4 w-16 h-16 bg-red-500 rounded-full flex items-center justify-center text-white text-xl cursor-pointer hover:bg-red-600 transition shadow-lg">
-        <i class="fas fa-volume-up"></i>
-    </div>
+        <!-- Technical Section -->
+        <section class="mb-16 bg-white rounded-xl shadow-md p-6">
+            <h2 class="text-3xl font-bold text-green-700 mb-6">Comment c'est codé</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Technologies utilisées</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i class="fab fa-html5 text-orange-500 mt-1 mr-3"></i>
+                            <span>HTML5 pour la structure du jeu</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fab fa-css3-alt text-blue-500 mt-1 mr-3"></i>
+                            <span>CSS3 pour le style et les animations</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fab fa-js-square text-yellow-500 mt-1 mr-3"></i>
+                            <span>JavaScript pur pour la logique du jeu</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-mobile text-purple-500 mt-1 mr-3"></i>
+                            <span>Approche mobile-first pour la compatibilité</span>
+                        </li>
+                    </ul>
+                    
+                    <h3 class="text-xl font-semibold mt-8 mb-4">Fonctionnalités clés</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div class="bg-green-100 text-green-800 rounded-full w-6 h-6 flex items-center justify-center mr-3 mt-1 flex-shrink-0">1</div>
+                            <p>Système de mouvement fluide avec gestion de la gravité</p>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-green-100 text-green-800 rounded-full w-6 h-6 flex items-center justify-center mr-3 mt-1 flex-shrink-0">2</div>
+                            <p>Détection de collision précise pour tous les éléments</p>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-green-100 text-green-800 rounded-full w-6 h-6 flex items-center justify-center mr-3 mt-1 flex-shrink-0">3</div>
+                            <p>Génération procédurale des niveaux avec difficulté progressive</p>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Extrait de code</h3>
+                    <p class="text-gray-700 mb-3">Voici un extrait du code JavaScript qui gère les contrôles et les collisions :</p>
+                    <div class="code-block">
+                        <pre><code class="text-sm">// Gestion des contrôles
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowLeft' || e.key === 'a') {
+        frogDirection = -1; // Déplacement gauche
+    }
+    if (e.key === 'ArrowRight' || e.key === 'd') {
+        frogDirection = 1; // Déplacement droite
+    }
+    if (e.code === 'Space' && isGrounded) {
+        frogVelocity = jumpForce; // Saut
+    }
+});
 
-    <script>
-        // Make the header shake when clicked
-        document.querySelector('.shake').addEventListener('click', function() {
-            this.classList.toggle('shake');
-        });
+// Détection de collision avec les bananes
+function checkBananaCollision() {
+    bananas.forEach((banana, index) => {
+        if (Math.abs(frogX - banana.x) < 20 && 
+            Math.abs(frogY - banana.y) < 20) {
+            score += 10;
+            bananas.splice(index, 1);
+            playCollectSound();
+        }
+    });
+}
 
-        // Emergency button functionality
-        document.querySelector('button').addEventListener('click', function() {
-            alert('EMERGENCY PROTOCOL ACTIVATED!\n\nDispatching silence squad to your location.\nEstimated time of arrival: 5 minutes.\n\nPlease remain calm and avoid eye contact with Anas.');
-        });
+// Vérification de la victoire (drapeau)
+function checkWinCondition() {
+    if (Math.abs(frogX - flagX) < 30 && 
+        Math.abs(frogY - flagY) < 50) {
+        levelComplete();
+    }
+}</code></pre>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-        // Floating Anas head button
-        document.querySelector('.fixed').addEventListener('click', function() {
-            const phrases = [
-                "But listen to this...",
-                "You know what I think?",
-                "So anyway, here's the thing...",
-                "Wait wait wait, hear me out...",
-                "I was reading this article..."
-            ];
-            const randomPhrase = phrases[Math.floor(Math.random() * phrases.length)];
-            
-            const bubble = document.createElement('div');
-            bubble.className = 'speech-bubble absolute bottom-20 right-0 px-4 py-2 text-white';
-            bubble.textContent = randomPhrase;
-            this.parentNode.appendChild(bubble);
-            
-            setTimeout(() => {
-                bubble.remove();
-            }, 3000);
-        });
-    </script>
+        <!-- Game Elements Showcase -->
+        <section class="mb-16 bg-white rounded-xl shadow-md p-6">
+            <h2 class="text-3xl font-bold text-green-700 mb-6">Éléments du jeu</h2>
+            <div class="grid md:grid-cols-4 gap-6">
+                <div class="text-center">
+                    <div class="lily-pad inline-block mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" class="w-24 h-24">
+                            <circle cx="50" cy="50" r="40" fill="#8BC34A" />
+                            <circle cx="50" cy="50" r="30" fill="#7CB342" />
+                            <ellipse cx="50" cy="50" rx="25" ry="15" fill="#689F38" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold">Plateformes</h3>
+                    <p class="text-gray-700">Surfaces stables pour se reposer</p>
+                </div>
+                <div class="text-center">
+                    <div class="inline-block mb-4">
+                        <svg class="w-24 h-24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+                            <circle cx="50" cy="50" r="40" fill="#4CAF50" />
+                            <circle cx="35" cy="40" r="5" fill="#000" />
+                            <circle cx="65" cy="40" r="5" fill="#000" />
+                            <path d="M40 65 Q50 75 60 65" stroke="#000" stroke-width="2" fill="none" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold">Grenouille</h3>
+                    <p class="text-gray-700">Personnage principal du jeu</p>
+                </div>
+                <div class="text-center">
+                    <div class="inline-block mb-4 moving-saw">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" class="w-24 h-24">
+                            <circle cx="50" cy="50" r="30" fill="#B0BEC5" />
+                            <circle cx="50" cy="50" r="20" fill="#78909C" />
+                            <path d="M50 20 L50 80 M20 50 L80 50 M35 35 L65 65 M35 65 L65 35" 
+                                  stroke="#E53935" stroke-width="5" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold">Scies</h3>
+                    <p class="text-gray-700">Obstacles mortels qui se déplacent</p>
+                </div>
+                <div class="text-center">
+                    <div class="inline-block mb-4 platform">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 50" class="w-24 h-12">
+                            <rect x="10" y="20" width="80" height="10" fill="#5D4037" rx="2" />
+                            <path d="M20 30 L30 40 M40 30 L50 40 M60 30 L70 40" 
+                                  stroke="#3E2723" stroke-width="2" />
+                            <path d="M30 15 L40 25 M50 15 L60 25" 
+                                  stroke="#FFC107" stroke-width="3" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold">Plateformes mobiles</h3>
+                    <p class="text-gray-700">Vous transportent automatiquement</p>
+                </div>
+                <div class="text-center">
+                    <div class="inline-block mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" class="w-24 h-24">
+                            <path d="M50 20 L30 80 L70 80 Z" fill="#FFC107" />
+                            <path d="M50 35 L45 50 L55 50 Z" fill="#5D4037" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold">Bananes</h3>
+                    <p class="text-gray-700">À collecter pour augmenter votre score</p>
+                </div>
+                <div class="text-center">
+                    <div class="inline-block mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" class="w-24 h-24">
+                            <rect x="45" y="20" width="10" height="60" fill="#E53935" />
+                            <path d="M50 20 L30 40 L70 40 Z" fill="#E53935" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold">Drapeau</h3>
+                    <p class="text-gray-700">Objectif à atteindre pour finir le niveau</p>
+                </div>
+                <div class="text-center">
+                    <div class="inline-block mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" class="w-24 h-24">
+                            <rect x="20" y="80" width="60" height="10" fill="#3F51B5" rx="2" />
+                            <text x="50" y="88" font-family="Arial" font-size="10" fill="white" text-anchor="middle">SCORE: 250</text>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold">Tableau de score</h3>
+                    <p class="text-gray-700">Affiche votre progression</p>
+                </div>
+                <div class="text-center">
+                    <div class="inline-block mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" class="w-24 h-24">
+                            <rect x="20" y="60" width="60" height="30" fill="#424242" rx="2" />
+                            <text x="50" y="80" font-family="Arial" font-size="10" fill="white" text-anchor="middle">NIVEAU 3</text>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold">Indicateur de niveau</h3>
+                    <p class="text-gray-700">Montre la difficulté actuelle</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Play Section -->
+    <section class="bg-green-700 text-white py-12 px-4">
+        <div class="container mx-auto text-center">
+            <h2 class="text-3xl font-bold mb-6">Prêt à jouer ?</h2>
+            <p class="text-xl mb-8">Testez maintenant Jump Frog et voyez si vous pouvez atteindre le drapeau !</p>
+            <a href="https://yuhanpizza.github.io/JumpFrog-Game/" class="inline-block bg-yellow-400 hover:bg-yellow-500 text-green-900 font-bold py-3 px-8 rounded-full text-lg transition duration-300 transform hover:scale-105 shadow-lg">
+                Jouer maintenant <i class="fas fa-play ml-2"></i>
+            </a>
+            <p class="mt-4 text-green-200">Lieu pour jouer : <a href="https://yuhanpizza.github.io/JumpFrog-Game/" class="underline">https://yuhanpizza.github.io/JumpFrog-Game/</a></p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-green-800 text-white py-8 px-4">
+        <div class="container mx-auto text-center">
+            <p class="mb-4">Jump Frog - Un projet développé par Mohamed Makhlouf</p>
+            <div class="flex justify-center space-x-6">
+                <a href="#" class="text-white hover:text-green-300">
+                    <i class="fab fa-github text-2xl"></i>
+                </a>
+                <a href="#" class="text-white hover:text-green-300">
+                    <i class="fab fa-twitter text-2xl"></i>
+                </a>
+                <a href="#" class="text-white hover:text-green-300">
+                    <i class="fab fa-linkedin text-2xl"></i>
+                </a>
+            </div>
+            <p class="mt-6 text-green-300 text-sm">© 2023 Tous droits réservés</p>
+        </div>
+    </footer>
 </body>
 </html>
